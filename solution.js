@@ -6,7 +6,7 @@ import postgres from "postgres";
 
 const port = 3000;
 
-const sql = postgres("postgres://candleshop_user:nl44Q5KFvpbBntQXyQ5Mnhblv8pmde0G@dpg-cedm3mh4reb8944e4peg-a.oregon-postgres.render.com/candleshop?ssl=true");
+const sql = postgres(process.env.DATABASE_URL);
 
 const app = express();
 
