@@ -1,0 +1,12 @@
+//tracking calories
+    create db -
+    create tables - 
+    insert data - 
+    
+//install dependencies
+  nodemon, postgres, express
+
+//Create server file
+    create server - createdb "name" 
+    connect to db - psql -f "filename" "databasename"
+    create routes - app.get or app.post basics
