@@ -6,11 +6,7 @@ import postgres from "postgres";
 
 const port = 3000;
 
-const sql = postgres({
-    database:"onlineshopping",
-    username:"postgres",
-    password:"password"
-})
+const sql = postgres("postgres://candleshop_user:nl44Q5KFvpbBntQXyQ5Mnhblv8pmde0G@dpg-cedm3mh4reb8944e4peg-a.oregon-postgres.render.com/candleshop?ssl=true")
 
 const app = express();
 
