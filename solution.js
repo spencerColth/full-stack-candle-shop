@@ -43,7 +43,7 @@ app.get("/api/inventory/:id", (req, res) => {
     })
 })
 
-app.post("/inventory", (req,res) => {
+app.post("/api/inventory", (req,res) => {
     const {item_name, item_desc, price} = req.body;
     sql`INSERT INTO inventory (item_name, item_desc, price) VALUES (${item_name}, ${item_desc}, ${price}) RETURNING *`.then((result) => {
             res.send(result[0])
