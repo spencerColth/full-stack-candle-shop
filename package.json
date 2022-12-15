@@ -1,0 +1,10 @@
+{
+  "type":"module",
+  "scripts": {
+    "start":"node solution.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "postgres": "^3.3.2"
+  }
+}
