@@ -5,9 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="app.js"></script>
-    <title>Candle Stow</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Patient Portal</title>
+    <center><h1 class="banner">Clinic Patient Portal Database</h1></center>
 </head>
 <body>
-    
+   <center><div class="row">
+    <button id="newPatient">New Patient</button><button id="newDoctor">New Doctor</button><button id="newDoctor">New Insurance</button>
+    <div id="newPatientForm" style="display: none;">
+       <label for="name">Full Name</label><br>
+       <input type="text" class="patientPost" id="name"><br>
+
+       <label for="phone">Phone</label><br>
+       <input type="number" class="patientPost" id="phone"><br>
+
+       <label for="name">E-mail</label><br>
+       <input type="text" class="patientPost" id="email"><br>
+
+       <label for="phone">Insurance ID</label><br>
+       <input type="number" class="patientPost" id="insurance"><br>
+
+       <label for="name"> Doctor ID</label><br>
+       <input type="number" class="patientPost" id="doctor"><br>
+
+       <label for="phone">Insurance Active?</label><br>
+       <input type="text" class="patientPost" id="activeinsurance"><br>
+       <button class="submission">Submit</button>
+    </div>
+    <div class="patientsListing"></div>
+    <div class="patientrow"></div>
+    <div class="doctorListing"></div><br>
+    <div class="insuranceListing"></div><br>
+    </div></center>
 </body>
 </html>
