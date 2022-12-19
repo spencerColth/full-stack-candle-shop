@@ -228,4 +228,4 @@ deleteButton.addEventListener("Click", () => {
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
     });
-});
+});git push

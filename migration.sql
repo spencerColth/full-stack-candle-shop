@@ -27,12 +27,9 @@ CREATE TABLE insurance (
 
 
 INSERT INTO patients (name, phone, email, insurance_id, doctor_id, insurance_active) 
-VALUES ('Aimee Kali', 8675309, 'aimali@gmail.com', 135, 1,'Yes');
+VALUES ('Aimee Kali', 8675309, 'aimali@gmail.com', 49148, 1,'Yes');
+VALUES ('Joe Henderson', 8675308, 'henjo@gmail.com', 49147, 1,'Yes');
+VALUES ('Rachele Sakshi', 8675306, 'rachakshi@gmail.com', 49147, 1,'Yes');
 
 
-INSERT INTO doctors (name, specialty, phone, email, available) 
-VALUES ('Obi Charis', 'Neurosurgeon', 8675308, 'obiris@gmail.com', 'Yes');
 
-
-INSERT INTO insurance (name) 
-VALUES ('AllAngles Insurance');
