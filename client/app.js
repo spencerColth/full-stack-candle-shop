@@ -26,7 +26,7 @@ patientList();
 //========================  New Patient form ======================
 const submissionButton = document.getElementById("patientSubmission");
 const newPatient = document.getElementById("newPatient");
-//displays form when newpatient button is pressed
+//displays new patient information entry form
 newPatient.addEventListener("click", function () {
   const form = document.getElementById("newPatientForm");
   if (form.style.display === "none") {
@@ -105,7 +105,7 @@ submissionButton.addEventListener("click", function () {
 });
 //====================================================================
 
-
+//displays update information entry form
 const updatePatient = document.querySelector("#update");
 updatePatient.addEventListener("click", function () {
   const updatePatient = document.getElementById("updatePatientForm");
@@ -132,7 +132,7 @@ updatePatient.addEventListener("click", function () {
 
 });
 const updateButton = document.getElementById("updatePatient");
-
+//adds functionality to update button
 updateButton.addEventListener("click", function () {
   const patchId = document.getElementById("id");
   const newName = document.getElementById("newname");
@@ -190,8 +190,8 @@ updateButton.addEventListener("click", function () {
 });
 
 
-
-const deletePatient = document.getElementById('delete')
+//displays delete patient form
+const deletePatient = document.getElementById('deleteButton')
 
 deletePatient.addEventListener("click", function () {
   const updatePatient = document.getElementById("deletePatient");
@@ -214,17 +214,18 @@ deletePatient.addEventListener("click", function () {
   }
 });
 
+//adds functionality to delete button
 const deleteButton = document.getElementById('deleteEntry');
-
 deleteButton.addEventListener("Click", () => {
   const deleteID = document.getElementById('delete');
+  let id = parseInt(deleteID.value);
 
-  fetch(`/api/patients/${deleteID}`, {
-    method: "DELETE"
+  fetch(`/api/patients/${id}`, {
+    method: 'DELETE'
   }).then(() => {
       $("#patientTable td").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
-    });;
-})
+    });
+});
