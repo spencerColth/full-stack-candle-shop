@@ -1,0 +1,78 @@
+
+body {
+    min-height: fit-content;
+    background-image: linear-gradient(rgb(135, 182, 252), rgb(255, 255, 255));
+    height: 100%;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+html {
+    height: 100%;
+}
+.patientListing {
+    width: auto;
+    border: 1px solid rgb(0, 0, 0);
+    font-family: 'Chivo Mono', monospace;
+    margin: 10px;
+    border-radius: 15px;
+    background-color: whitesmoke;
+    padding: 5px;
+}
+.row {
+    border: solid rgb(0, 0, 0) 1px;
+    border-radius: 15px;
+    flex-direction: row;
+    align-items: stretch;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    background-color: rgb(179, 179, 179);
+    
+}
+
+.patientPost {
+    background-color: rgb(179, 179, 179);
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+.newPatientForm{
+    border: 1px solid rgb(0, 0, 0);
+    width:fit-content;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: column;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: antiquewhite;
+}
+
+.rowbox {
+    direction: column;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.buttons {
+    font-family: 'Chivo Mono', monospace;
+    margin: 15px;
+}
+
+.rowbox2 {
+    height: 335px;
+    margin: 15px;
+    border-radius: 15px;
+}
+
+
+table,tr,th,td {
+  border: 1px solid black;
+  margin: 5px;
+  justify-content: center;
+  align-content: center;
+  width: auto;
+}
