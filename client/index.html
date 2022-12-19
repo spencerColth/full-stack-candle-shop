@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +13,9 @@
     <center><h1 class="banner">Clinic Patient Portal Database</h1></center>
 </head>
 <body>
-   <center><div class="row">
-    <button id="newPatient">New Patient</button><button id="newDoctor">New Doctor</button><button id="newDoctor">New Insurance</button>
-    <div id="newPatientForm" style="display: none;">
+    <center><button class="buttons" id="newPatient">New Patient</button></center>
+    <div class="rowbox2">
+    <center><div id="newPatientForm" class="newPatientForm" style="display: none;">
        <label for="name">Full Name</label><br>
        <input type="text" class="patientPost" id="name"><br>
 
@@ -30,12 +33,27 @@
 
        <label for="phone">Insurance Active?</label><br>
        <input type="text" class="patientPost" id="activeinsurance"><br>
-       <button class="submission">Submit</button>
+       <button class ="buttons" id="patientSubmission">Submit</button></div></center></div>
+        <div class="rowbox">
+    <div class="row">
+<!-- <div class="doctorListing"></div> -->
+<div class="patientListing">
+    <table id="patientTable">
+        <tr>
+        <th>Patient ID</th>
+        <th>Full Name</th>
+        <th>Contact Number</th>
+        <th>E-Mail</th>
+        <th>Insurance ID</th>
+        <th>Doctor ID</th>
+        <th>Insurance Active?</th>
+        </tr>
+    </table>
+</div>
+<!-- <div class="insuranceListing"></div> -->
+</div>
     </div>
-    <div class="patientsListing"></div>
-    <div class="patientrow"></div>
-    <div class="doctorListing"></div><br>
-    <div class="insuranceListing"></div><br>
-    </div></center>
+    
+
 </body>
 </html>
