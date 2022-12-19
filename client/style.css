@@ -92,7 +92,7 @@ table,tr,th,td {
 }
 
 .deletePatient{
-        border: 1px solid rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
     width:fit-content;
     padding: 10px;
     justify-content: center;

@@ -194,11 +194,11 @@ updateButton.addEventListener("click", function () {
 const deletePatient = document.getElementById('deleteButton')
 
 deletePatient.addEventListener("click", function () {
-  const updatePatient = document.getElementById("deletePatient");
-  if (updatePatient.style.display === "none") {
-    updatePatient.style.display = "block";
+  const deletePatient = document.getElementById("deletePatient");
+  if (deletePatient.style.display === "none") {
+    deletePatient.style.display = "block";
   } else {
-    updatePatient.style.display = "none";
+    deletePatient.style.display = "none";
   }
   const newPatient = document.getElementById("newPatientForm");
   if (newPatient.style.display === "block") {
@@ -206,11 +206,11 @@ deletePatient.addEventListener("click", function () {
   } else {
     newPatient.style.display = "none";
   }
-  const deletePatient = document.getElementById("updatePatientForm");
-  if (deletePatient.style.display === "block") {
-    deletePatient.style.display = "none";
+  const updatePatient = document.getElementById("updatePatientForm");
+  if (updatePatient.style.display === "block") {
+    updatePatient.style.display = "none";
   } else {
-    deletePatient.style.display = "none";
+    updatePatient.style.display = "none";
   }
 });
 
@@ -228,4 +228,4 @@ deleteButton.addEventListener("Click", () => {
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
     });
-});git push
+});
