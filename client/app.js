@@ -97,7 +97,7 @@ submissionButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable td").remove(); //removes table that hasnt been updated
+      $("#patientTable tr").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -182,7 +182,7 @@ updateButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable td").remove(); //removes table that hasnt been updated
+      $("#patientTable tr").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -223,7 +223,7 @@ deleteButton.addEventListener("Click", () => {
   fetch(`/api/patients/${id}`, {
     method: 'DELETE'
   }).then(() => {
-      $("#patientTable td").remove(); //removes table that hasnt been updated
+      $("#patientTable tr").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
