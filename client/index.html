@@ -4,6 +4,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@100&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,33 +14,38 @@
     <center><h1 class="banner">Clinic Patient Portal Database</h1></center>
 </head>
 <body>
-    <center><button class="buttons" id="newPatient">New Patient</button></center>
+    <center><button class="buttons" id="newPatient">New Patient</button> <button class="buttons" id="update">Update Patient</button> <button class="buttons" id="delete">Remove Patient</button></center>
     <div class="rowbox2">
     <center><div id="newPatientForm" class="newPatientForm" style="display: none;">
-       <label for="name">Full Name</label><br>
-       <input type="text" class="patientPost" id="name"><br>
-
-       <label for="phone">Phone</label><br>
-       <input type="number" class="patientPost" id="phone"><br>
-
-       <label for="name">E-mail</label><br>
-       <input type="text" class="patientPost" id="email"><br>
-
-       <label for="phone">Insurance ID</label><br>
-       <input type="number" class="patientPost" id="insurance"><br>
-
-       <label for="name"> Doctor ID</label><br>
-       <input type="number" class="patientPost" id="doctor"><br>
-
-       <label for="phone">Insurance Active?</label><br>
-       <input type="text" class="patientPost" id="activeinsurance"><br>
-       <button class ="buttons" id="patientSubmission">Submit</button></div></center></div>
-        <div class="rowbox">
+       <label for="name">Full Name</label><br><input type="text" class="patientPost" id="name"><br>
+       <label for="phone">Phone</label><br><input type="number" class="patientPost" id="phone"><br>
+       <label for="email">E-mail</label><br><input type="text" class="patientPost" id="email"><br>
+       <label for="insurance">Insurance ID#</label><br><input type="number" class="patientPost" id="insurance"><br>
+       <label for="doctor"> Doctor ID#</label><br><input type="number" class="patientPost" id="doctor"><br>
+       <label for="activeinsurance">Insurance Active?</label><br><input type="text" class="patientPost" id="activeinsurance"><br>
+       <button class ="buttons" id="patientSubmission">Submit</button>
+    </div></center>
+       
+       <center><div id="updatePatientForm" class="updatePatientForm" style="display: none;">
+        <label for="id">Patient ID#</label><br><input type="number" class="patientPost" id="id"><br>
+        <label for="newname">Full Name</label><br><input type="text" class="patientPost" id="newname"><br>
+        <label for="newphone">Phone</label><br><input type="number" class="patientPost" id="newphone"><br>
+        <label for="newemail">Email</label><br><input type="text" class="patientPost" id="newemail"><br>
+        <label for="newinsurance">Insurance ID#</label><br><input type="number" class="patientPost" id="newinsurance"><br>
+        <label for="newdoctor">Doctor ID#</label><br><input type="number" class="patientPost" id="newdoctor"><br>
+        <label for="insuranceactive">Insurance Active?</label><br><input type="text" class="patientPost" id="insuranceactive"><br>
+        <button class="buttons" id="updatePatient">Update</button>
+    </div></center>
+        <center><div id="deletePatient" class="deletePatient" style="display: none;">
+            <label for="delete">Patient entry to Remove ID#</label><br><input type="number" class="patientPost" id="delete"><br>
+            <button class="buttons" id="deleteEntry">Delete</button>
+        </div></center>
+    </div>
+       <div class="rowbox">
     <div class="row">
 <!-- <div class="doctorListing"></div> -->
 <div class="patientListing">
     <table id="patientTable">
-        <tr>
         <th>Patient ID</th>
         <th>Full Name</th>
         <th>Contact Number</th>
@@ -47,7 +53,8 @@
         <th>Insurance ID</th>
         <th>Doctor ID</th>
         <th>Insurance Active?</th>
-        </tr>
+
+
     </table>
 </div>
 <!-- <div class="insuranceListing"></div> -->

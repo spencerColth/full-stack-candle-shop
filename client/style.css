@@ -28,6 +28,7 @@ html {
     justify-content: space-between;
     width: auto;
     background-color: rgb(179, 179, 179);
+    margin: 15px;
     
 }
 
@@ -36,6 +37,17 @@ html {
     color: white;
     text-align: center;
     padding: 5px;
+}
+.updatePatientForm{
+    border: 1px solid rgb(0, 0, 0);
+    width:fit-content;
+    justify-content: center;
+    align-items: center;
+    display: column;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: antiquewhite;
 }
 
 .newPatientForm{
@@ -63,7 +75,7 @@ html {
 }
 
 .rowbox2 {
-    height: 335px;
+    height: 400px;
     margin: 15px;
     border-radius: 15px;
 }
@@ -75,4 +87,18 @@ table,tr,th,td {
   justify-content: center;
   align-content: center;
   width: auto;
+  padding: 5px;
+  text-align: center;
+}
+
+.deletePatient{
+        border: 1px solid rgb(0, 0, 0);
+    width:fit-content;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    display: column;
+    margin: 15px;
+    border-radius: 15px;
+    background-color: antiquewhite;
 }
