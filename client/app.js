@@ -24,6 +24,7 @@ let patientList = function () {
 patientList();
 
 //========================  New Patient form ======================
+
 const submissionButton = document.getElementById("patientSubmission");
 const newPatient = document.getElementById("newPatient");
 //displays new patient information entry form
@@ -103,7 +104,7 @@ submissionButton.addEventListener("click", function () {
       patientList(); //pulls updated table from DBL to increment ID
     });
 });
-//====================================================================
+//====================Update PAtient Form==========================
 
 //displays update information entry form
 const updatePatient = document.querySelector("#update");
@@ -189,7 +190,7 @@ updateButton.addEventListener("click", function () {
     });
 });
 
-
+//=====================Delete Patient by ID ======================
 //displays delete patient form
 const deletePatient = document.getElementById('deleteButton')
 
