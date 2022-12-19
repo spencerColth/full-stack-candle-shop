@@ -12,6 +12,7 @@ let patientList = function () {
         let count = 0;
         const table = document.getElementById("patientTable");
         const row = table.insertRow(1);
+        row.classname = "deleteme"
         for (cells in patient) {
           const cell = row.insertCell(count);
           cell.innerHTML = `${patient[cells]}`;
@@ -48,7 +49,6 @@ newPatient.addEventListener("click", function () {
   } else {
     deletePatient.style.display = "none";
   }
-
 });
 //submits patient into database and hides new patient form
 
@@ -98,7 +98,7 @@ submissionButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable tr").remove(); //removes table that hasnt been updated
+      $("#patientTable td").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -115,7 +115,7 @@ updatePatient.addEventListener("click", function () {
   } else {
     updatePatient.style.display = "none";
   }
-  
+
   const newPatient = document.getElementById("newPatientForm");
   if (newPatient.style.display === "block") {
     newPatient.style.display = "none";
@@ -123,14 +123,12 @@ updatePatient.addEventListener("click", function () {
     newPatient.style.display = "none";
   }
 
-   const deletePatient = document.getElementById("deletePatient");
+  const deletePatient = document.getElementById("deletePatient");
   if (deletePatient.style.display === "block") {
     deletePatient.style.display = "none";
   } else {
     deletePatient.style.display = "none";
   }
-
-
 });
 const updateButton = document.getElementById("updatePatient");
 //adds functionality to update button
@@ -183,7 +181,7 @@ updateButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable tr").remove(); //removes table that hasnt been updated
+      $("#patientTable td").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -192,7 +190,7 @@ updateButton.addEventListener("click", function () {
 
 //=====================Delete Patient by ID ======================
 //displays delete patient form
-const deletePatient = document.getElementById('deleteButton')
+const deletePatient = document.getElementById("deleteButton");
 
 deletePatient.addEventListener("click", function () {
   const deletePatient = document.getElementById("deletePatient");
@@ -216,15 +214,16 @@ deletePatient.addEventListener("click", function () {
 });
 
 //adds functionality to delete button
-const deleteButton = document.getElementById('deleteEntry');
+const deleteButton = document.getElementById("deleteEntry");
 deleteButton.addEventListener("Click", () => {
-  const deleteID = document.getElementById('delete');
+  const deleteID = document.getElementById("delete");
   let id = parseInt(deleteID.value);
 
   fetch(`/api/patients/${id}`, {
-    method: 'DELETE'
-  }).then(() => {
-      $("#patientTable tr").remove(); //removes table that hasnt been updated
+    method: "DELETE",
+  })
+    .then(() => {
+      $(".deleteme").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
