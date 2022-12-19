@@ -4,9 +4,9 @@ import postgres from "postgres";
 import bodyParser from "body-parser";
 const port = 3000;
 
-const sql = postgres({
+const sql = postgres(
 "postgres://patientdb:pTU6gYAMsPXlG6dYQ1Yg8p7tkmVuEA2P@dpg-cegce4kgqg4bl46mg2jg-a.oregon-postgres.render.com/patientdb"
-});
+);
 
 const app = express();
 
