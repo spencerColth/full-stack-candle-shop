@@ -165,6 +165,7 @@ updateButton.addEventListener("click", function () {
       let count = 0;
       const table = document.getElementById("patientTable");
       const row = table.insertRow(1);
+      row.className = "deleteme";
       for (cells in data) {
         const cell = row.insertCell(count);
         cell.innerHTML = `${patient[cells]}`;
@@ -214,15 +215,15 @@ deletePatient.addEventListener("click", function () {
 });
 
 //adds functionality to delete button
-const deleteButton = document.getElementById("deleteEntry");
+const deleteButton = document.getElementById("delete");
 
-deleteButton.addEventListener("Click", () => {
-  const deleteID = document.getElementById("delete");
+deleteButton.addEventListener("click", () => {
+  const deleteID = document.getElementById("deleteEntry");
   let id = parseInt(deleteID.value);
 
   console.log(id)
   fetch(`/api/patients/${id}`, {
-    method: "DELETE",
+    method: "delete",
   })
     .then(() => {
       $(".deleteme").remove(); //removes table that hasnt been updated
