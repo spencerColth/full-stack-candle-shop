@@ -217,7 +217,7 @@ deletePatient.addEventListener("click", function () {
 const deleteButton = document.getElementById("deleteEntry");
 
 deleteButton.addEventListener("Click", () => {
-  const deleteID = document.getElementById("deleteEntry");
+  const deleteID = document.getElementById("delete");
   let id = parseInt(deleteID.value);
 
   fetch(`/api/patients/${id}`, {
