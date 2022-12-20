@@ -2,6 +2,10 @@ import express from "express";
 import { readFile } from "fs";
 import postgres from "postgres";
 import bodyParser from "body-parser";
+import * as dotenv from "dotenv";
+
+dotenv.config();
+
 const port = 3000;
 
 const sql = postgres(process.env.DATABASE_URL);
@@ -59,86 +63,86 @@ app.patch("/api/patients/:id", (req, res) => {
 });
 
 app.delete("/api/patients/:id", (req, res) => {
-  const { id } = req.params;
-  sql`DELETE FROM patients WHERE id= ${id}`.then((result) => {
+  const id = req.params.id;
+  sql`DELETE FROM patients WHERE id= ${id} RETURNING *`.then((result) => {
     res.json(result);
   });
 });
 
 //===========================Doctor Routes ===============================
 
-app.get("/api/doctors/:id", (req, res) => {
-  const { search } = req.params;
-  const { id } = req.params;
-  sql`SELECT * FROM doctors WHERE id= ${id}`.then((result) => {
-    res.json(result);
-  });
-});
+// app.get("/api/doctors/:id", (req, res) => {
+//   const { search } = req.params;
+//   const { id } = req.params;
+//   sql`SELECT * FROM doctors WHERE id= ${id}`.then((result) => {
+//     res.json(result);
+//   });
+// });
 
-app.get("/api/doctors", (req, res) => {
-  const { search } = req.params;
-  sql`SELECT * FROM doctors`.then((result) => {
-    res.json(result);
-  });
-});
+// app.get("/api/doctors", (req, res) => {
+//   const { search } = req.params;
+//   sql`SELECT * FROM doctors`.then((result) => {
+//     res.json(result);
+//   });
+// });
 
-app.post("/api/doctors", (req, res) => {
-  const { name, phone, email, specialty, available } = req.body;
-  sql`INSERT INTO doctors (name, specialty, phone, email, available) VALUES (${name}, ${specialty}, ${phone}, ${email}, ${available}) RETURNING *`.then(
-    (result) => {
-      res.send(result[0]);
-    }
-  );
-});
+// app.post("/api/doctors", (req, res) => {
+//   const { name, phone, email, specialty, available } = req.body;
+//   sql`INSERT INTO doctors (name, specialty, phone, email, available) VALUES (${name}, ${specialty}, ${phone}, ${email}, ${available}) RETURNING *`.then(
+//     (result) => {
+//       res.send(result[0]);
+//     }
+//   );
+// });
 
-app.delete("/api/doctors/:id", (req, res) => {
-  const { id } = req.params;
-  sql`DELETE FROM doctors WHERE id= ${id}`.then((result) => {
-    res.json(result);
-  });
-});
-//===========================INSURANCE ROUTES ==========================
-app.get("/api/insurance", (req, res) => {
-  sql`SELECT * FROM insurance`.then((result) => {
-    res.json(result);
-  });
-});
+// app.delete("/api/doctors/:id", (req, res) => {
+//   const { id } = req.params;
+//   sql`DELETE FROM doctors WHERE id= ${id}`.then((result) => {
+//     res.json(result);
+//   });
+// });
+// //===========================INSURANCE ROUTES ==========================
+// app.get("/api/insurance", (req, res) => {
+//   sql`SELECT * FROM insurance`.then((result) => {
+//     res.json(result);
+//   });
+// });
 
-app.get("/api/insurance/:id", (req, res) => {
-  const { id } = req.params;
-  sql`SELECT * FROM insurance WHERE id= ${id}`.then((result) => {
-    res.json(result);
-  });
-});
+// app.get("/api/insurance/:id", (req, res) => {
+//   const { id } = req.params;
+//   sql`SELECT * FROM insurance WHERE id= ${id}`.then((result) => {
+//     res.json(result);
+//   });
+// });
 
-app.post("/api/insurance", (req, res) => {
-  const { name } = req.body;
-  sql`INSERT INTO insurance (name) VALUES (${name}) RETURNING *`.then(
-    (result) => {
-      res.send(result[0]);
-    }
-  );
-});
+// app.post("/api/insurance", (req, res) => {
+//   const { name } = req.body;
+//   sql`INSERT INTO insurance (name) VALUES (${name}) RETURNING *`.then(
+//     (result) => {
+//       res.send(result[0]);
+//     }
+//   );
+// });
 
-app.patch("/api/insurance/:id", (req, res) => {
-  const { id } = req.params;
-  const { name } = req.body;
+// app.patch("/api/insurance/:id", (req, res) => {
+//   const { id } = req.params;
+//   const { name } = req.body;
 
-  sql`
-    UPDATE insurance SET name=COALESCE(${
-      name || null
-    }, name) WHERE id=${id} RETURNING *
-    `.then((result) => {
-    res.json(result[0]);
-  });
-});
+//   sql`
+//     UPDATE insurance SET name=COALESCE(${
+//       name || null
+//     }, name) WHERE id=${id} RETURNING *
+//     `.then((result) => {
+//     res.json(result[0]);
+//   });
+// });
 
-app.delete("/api/insurance/:id", (req, res) => {
-  const { id } = req.params;
-  sql`DELETE FROM insurance WHERE id= ${id}`.then((result) => {
-    res.json(result);
-  });
-});
+// app.delete("/api/insurance/:id", (req, res) => {
+//   const { id } = req.params;
+//   sql`DELETE FROM insurance WHERE id= ${id}`.then((result) => {
+//     res.json(result);
+//   });
+// });
 
 //====================================================================
 app.listen(port, () => {

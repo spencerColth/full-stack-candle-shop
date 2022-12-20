@@ -220,6 +220,7 @@ deleteButton.addEventListener("Click", () => {
   const deleteID = document.getElementById("delete");
   let id = parseInt(deleteID.value);
 
+  console.log(id)
   fetch(`/api/patients/${id}`, {
     method: "DELETE",
   })
