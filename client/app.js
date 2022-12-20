@@ -12,7 +12,7 @@ let patientList = function () {
         let count = 0;
         const table = document.getElementById("patientTable");
         const row = table.insertRow(1);
-        row.classname = "deleteme"
+        row.className = "deleteme";
         for (cells in patient) {
           const cell = row.insertCell(count);
           cell.innerHTML = `${patient[cells]}`;
@@ -98,7 +98,7 @@ submissionButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable td").remove(); //removes table that hasnt been updated
+      $(".deleteme").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -181,7 +181,7 @@ updateButton.addEventListener("click", function () {
       }
     })
     .then(() => {
-      $("#patientTable td").remove(); //removes table that hasnt been updated
+      $(".deleteme").remove(); //removes table that hasnt been updated
     })
     .then(() => {
       patientList(); //pulls updated table from DBL to increment ID
@@ -215,8 +215,9 @@ deletePatient.addEventListener("click", function () {
 
 //adds functionality to delete button
 const deleteButton = document.getElementById("deleteEntry");
+
 deleteButton.addEventListener("Click", () => {
-  const deleteID = document.getElementById("delete");
+  const deleteID = document.getElementById("deleteEntry");
   let id = parseInt(deleteID.value);
 
   fetch(`/api/patients/${id}`, {
