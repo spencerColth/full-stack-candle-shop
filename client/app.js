@@ -4,7 +4,7 @@ const insuranceListing = document.querySelector(".insuranceListing");
 const patientTable = document.getElementById("patientTable");
 
 let patientList = function () {
-  
+
   fetch("/api/patients")
     .then((res) => res.json())
     .then((data) => {
@@ -83,6 +83,7 @@ submissionButton.addEventListener("click", function () {
       let count = 0;
       const table = document.getElementById("patientTable");
       const row = table.insertRow(1);
+      row.className = "deleteme";
       for (cells in data) {
         const cell = row.insertCell(count);
         cell.innerHTML = `${patient[cells]}`;
