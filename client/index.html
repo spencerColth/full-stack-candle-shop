@@ -50,11 +50,13 @@
             class="patientPost"
             id="doctor"
           /><br />
-          <label for="activeinsurance">Insurance Active?</label><br /><input
-            type="text"
+          <label for="activeinsurance">Insurance Active?</label><br/>
+            <select name="activeinsurance"
             class="patientPost"
-            id="activeinsurance"
-          /><br />
+            id="activeinsurance">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br />
           <button class="buttons" id="patientSubmission">Submit</button>
         </div>
       </center>
@@ -95,11 +97,12 @@
             class="patientPost"
             id="newdoctor"
           /><br />
-          <label for="insuranceactive">Insurance Active?</label><br /><input
-            type="text"
+          <label for="insuranceactive">Insurance Active?</label><br />            <select name="activeinsurance"
             class="patientPost"
-            id="insuranceactive"
-          /><br />
+            id="insuranceactive">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select><br />
           <button class="buttons" id="updatePatient">Update</button>
         </div>
       </center>

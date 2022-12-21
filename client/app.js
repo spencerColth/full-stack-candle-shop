@@ -4,6 +4,7 @@ const insuranceListing = document.querySelector(".insuranceListing");
 const patientTable = document.getElementById("patientTable");
 
 let patientList = function () {
+  
   fetch("/api/patients")
     .then((res) => res.json())
     .then((data) => {
@@ -108,6 +109,7 @@ submissionButton.addEventListener("click", function () {
 
 //displays update information entry form
 const updatePatient = document.querySelector("#update");
+
 updatePatient.addEventListener("click", function () {
   const updatePatient = document.getElementById("updatePatientForm");
   if (updatePatient.style.display === "none") {
@@ -232,3 +234,4 @@ deleteButton.addEventListener("click", () => {
       patientList(); //pulls updated table from DBL to increment ID
     });
 });
+
