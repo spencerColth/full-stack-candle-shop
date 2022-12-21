@@ -31,7 +31,7 @@ const submissionButton = document.getElementById("patientSubmission");
 const newPatient = document.getElementById("newPatient");
 //displays new patient information entry form
 newPatient.addEventListener("click", function () {
-  const form = document.getElementById("newPatientForm");
+  const form = document.getElementById("newPatientForm"); //hides other forms when pressed
   if (form.style.display === "none") {
     form.style.display = "block";
   } else {
@@ -51,8 +51,8 @@ newPatient.addEventListener("click", function () {
     deletePatient.style.display = "none";
   }
 });
-//submits patient into database and hides new patient form
 
+//submits patient into database
 submissionButton.addEventListener("click", function () {
   const fullName = document.getElementById("name");
   const phone = document.getElementById("phone");
@@ -79,7 +79,7 @@ submissionButton.addEventListener("click", function () {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data); //creates new div for each submission
+      console.log(data); //populates table 
       let count = 0;
       const table = document.getElementById("patientTable");
       const row = table.insertRow(1);
@@ -103,7 +103,7 @@ submissionButton.addEventListener("click", function () {
       $(".deleteme").remove(); //removes table that hasnt been updated
     })
     .then(() => {
-      patientList(); //pulls updated table from DBL to increment ID
+      patientList(); //recreates table from DB
     });
 });
 //====================Update PAtient Form==========================
